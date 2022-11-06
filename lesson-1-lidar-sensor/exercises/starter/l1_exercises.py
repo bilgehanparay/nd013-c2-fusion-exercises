@@ -52,9 +52,12 @@ def print_pitch_resolution(frame, lidar_name):
 def print_no_of_vehicles(frame):
 
     print("Exercise C1-3-1")    
-
     # find out the number of labeled vehicles in the given frame
     # Hint: inspect the data structure frame.laser_labels
     num_vehicles = 0
-            
+    for x in frame.laser_labels:
+        if(x.type == x.TYPE_VEHICLE):
+            num_vehicles += 1   
+    print(frame.context.laser_calibrations)
+
     print("number of labeled vehicles in current frame = " + str(num_vehicles))
